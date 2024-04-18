@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
-import { Result } from "postcss";
+import Footer from "../pages/Footer";
 
 const Register = () => {
     const { createUser } = useContext(AuthContext);
@@ -62,6 +62,7 @@ const Register = () => {
                 </div>
             </form>
             <p className="text-center mt-4">Already have an account? <Link className="text-blue-600 font-bold" to="/login">Login</Link></p>
+            <Footer></Footer>
         </div>
     );
 };

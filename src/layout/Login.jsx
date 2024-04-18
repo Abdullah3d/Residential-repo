@@ -1,13 +1,25 @@
 import { Link } from "react-router-dom";
+import Footer from "../pages/Footer";
+import { useContext } from "react";
+import { AuthContext } from "../Provider/AuthProvider";
 
 const Login = () => {
+const { signIn } = useContext(AuthContext);
 
     const handleLogin = e =>{
         e.preventDefault();
         console.log(e.currentTarget);
         const form = new FormData(e.currentTarget);
-        console.log(form.get('password'));
-
+        const email = form.get('email');
+        const password = form.get('password');
+        console.log(email , password);
+       signIn(email,password)
+       .then(result =>{
+        console.log(result.user)
+       })
+       .catch(error =>{
+        console.error(error);
+       })
     }
     return (
         <div>
@@ -33,6 +45,7 @@ const Login = () => {
             </div>
             </form>
             <p className="text-center mt-4">Do not have an account? <Link className="text-blue-600 font-bold" to="/register">Register</Link></p>
+            <Footer></Footer>
         </div>
 
     );
