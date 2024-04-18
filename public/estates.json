@@ -1,0 +1,110 @@
+[
+  {
+    "id": 1,
+    "estate_title": "Luxury Villa with Ocean View",
+    "estate_img": "https://plus.unsplash.com/premium_photo-1678199834834-c91cb230d117?q=80&w=1914&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "segment_name": "Residential",
+    "description": "Beautiful villa overlooking the ocean, with spacious living areas and modern amenities.",
+    "price": "$1,500,000",
+    "status": "sale",
+    "area": "3000 sqft",
+    "location": "Coastal City, California",
+    "facilities": ["living room", "swimming pool", "kitchen"]
+  },
+  {
+    "id": 2,
+    "estate_title": "Downtown Loft Apartment",
+    "estate_img":"https://images.unsplash.com/photo-1655106176334-df565268234f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "segment_name": "Urban",
+    "description": "Chic loft apartment in the heart of downtown, featuring exposed brick walls and high ceilings.",
+    "price": "$3,000/month",
+    "status": "rent",
+    "area": "1200 sqft",
+    "location": "Downtown, New York",
+    "facilities": ["living room", "gym", "rooftop terrace", "kitchen"]
+  },
+  {
+    "id": 3,
+    "estate_title": "Family Home with Garden",
+    "estate_img": "https://images.unsplash.com/photo-1702742711235-d09891952156?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "segment_name": "Suburban",
+    "description": "Spacious family home with a large garden, perfect for outdoor activities and relaxation.",
+    "price": "$800,000",
+    "status": "sale",
+    "area": "2500 sqft",
+    "location": "Suburbia, Texas",
+    "facilities": ["living room", "garden", "kitchen", "garage"]
+  },
+  {
+    "id": 4,
+    "estate_title": "Mountain Retreat Cabin",
+    "estate_img":"https://images.unsplash.com/photo-1636118667579-52e77d1a8dae?q=80&w=1886&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "segment_name": "Rural",
+    "description": "Cozy cabin nestled in the mountains, ideal for a peaceful getaway surrounded by nature.",
+    "price": "$250,000",
+    "status": "sale",
+    "area": "1500 sqft",
+    "location": "Mountain Town, Colorado",
+    "facilities": ["living room", "fireplace", "kitchen", "deck"]
+  },
+  {
+    "id": 5,
+    "estate_title": "City Center Penthouse",
+    "estate_img":"https://images.unsplash.com/photo-1709911781964-7810af26d3be?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "segment_name": "Urban",
+    "description": "Luxurious penthouse with panoramic city views and top-of-the-line amenities.",
+    "price": "$5,000,000",
+    "status": "sale",
+    "area": "4000 sqft",
+    "location": "City Center, California",
+    "facilities": ["living room", "rooftop pool", "gym", "kitchen"]
+  },
+  {
+    "id": 6,
+    "estate_title": "Beachfront Bungalow",
+    "estate_img":"https://images.unsplash.com/photo-1499750264616-eca69646ae17?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "segment_name": "Vacation",
+    "description": "Quaint beachfront bungalow steps away from the sand, perfect for a relaxing vacation.",
+    "price": "$400/night",
+    "status": "rent",
+    "area": "800 sqft",
+    "location": "Beachfront, Florida",
+    "facilities": ["living room", "ocean view deck", "kitchen", "beach access"]
+  },
+  {
+    "id": 7,
+    "estate_title": "Historic Mansion",
+    "estate_img":"https://images.unsplash.com/photo-1706642317445-405d846000c1?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "segment_name": "Luxury",
+    "description": "Magnificent historic mansion with grand architecture and opulent interiors.",
+    "price": "$10,000,000",
+    "status": "sale",
+    "area": "10000 sqft",
+    "location": "Estate District, New York",
+    "facilities": ["living room", "ballroom", "home theater", "kitchen", "tennis court"]
+  },
+  {
+    "id": 8,
+    "estate_title": "Lakefront Cottage",
+    "estate_img":"https://images.unsplash.com/photo-1621443718054-b395ae663076?q=80&w=1886&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "segment_name": "Vacation",
+    "description": "Cozy cottage overlooking a serene lake, perfect for a peaceful retreat.",
+    "price": "$300/night",
+    "status": "rent",
+    "area": "1200 sqft",
+    "location": "Lakefront, Minnesota",
+    "facilities": ["living room", "lake view deck", "kitchen", "fire pit"]
+  },
+  {
+    "id": 9,
+    "estate_title": "Modern City Apartment",
+    "estate_img":"https://images.unsplash.com/photo-1630329274874-bb77886e360e?q=80&w=1888&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "segment_name": "Urban",
+    "description": "Sleek and modern apartment in a vibrant city neighborhood, close to shops and restaurants.",
+    "price": "$700,000",
+    "status": "sale",
+    "area": "1500 sqft",
+    "location": "Metropolis, Illinois",
+    "facilities": ["living room", "balcony", "gym", "kitchen"]
+  }
+  ]
