@@ -6,6 +6,8 @@ import Contact from "../pages/Contact";
 import Login from "../layout/Login";
 import Register from "../layout/Register";
 import ViewProperty from "../pages/ViewProperty";
+import PrivetRoute from "./PrivetRoute";
+import Profile from "../pages/Profile";
 
 const router = createBrowserRouter([
     {
@@ -19,7 +21,7 @@ const router = createBrowserRouter([
             },
             {
                 path:'/contact',
-                element:<Contact></Contact>
+                element:<PrivetRoute><Contact></Contact></PrivetRoute>
             },
             {
                 path: '/login',
@@ -31,8 +33,12 @@ const router = createBrowserRouter([
             },
             {
                 path:'/view/:id',
-                element:<ViewProperty></ViewProperty>,
+                element:<PrivetRoute><ViewProperty></ViewProperty></PrivetRoute>,
                 loader: () => fetch ('estates.json')
+            },
+            {
+                path:'/updateProfile',
+                element:<Profile></Profile>
             }
         ]
     }
