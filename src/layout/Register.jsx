@@ -23,6 +23,14 @@ const Register = () => {
             setRegisterError('password should be 6 character');
             return;
         }
+        else if (/[A-Z]/.test(password)){
+            setRegisterError('your password should have at least one upper case character.')
+            return;
+        }
+        else if(/[a-z]/.test('password')){
+            setRegisterError('Your password Should have at least one lower case character.')
+            return;
+        }
 
         setRegisterError('');
         setSuccess('');
@@ -69,6 +77,7 @@ const Register = () => {
                         <span className="label-text">Password</span>
                     </label>
                     <input type="password" name="password" placeholder="password" className="input input-bordered" required />
+                    <br/>
                     <label className="label">
                         <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                     </label>
@@ -78,10 +87,10 @@ const Register = () => {
                 </div>
             </form>
             {
-                registerError && <p className="text-red-700">{registerError}</p>
+                registerError && <p className="text-red-700 font-bold text-center">{registerError}</p>
             }
             {
-                success && <p className="text-green-600">{success}</p>
+                success && <p className="text-green-600 font-bold text-center">{success}</p>
             }
             <p className="text-center mt-4">Already have an account? <Link className="text-blue-600 font-bold" to="/login">Login</Link></p>
             <Footer></Footer>

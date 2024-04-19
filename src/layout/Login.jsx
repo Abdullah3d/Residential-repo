@@ -1,10 +1,12 @@
 import { Link } from "react-router-dom";
 import Footer from "../pages/Footer";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 import { Helmet } from "react-helmet-async";
 
 const Login = () => {
+    const [registerError, setRegisterError] = useState('');
+    const [success, setSuccess] = useState('');
     const { signIn } = useContext(AuthContext);
 
     const handleLogin = e => {
@@ -14,12 +16,19 @@ const Login = () => {
         const email = form.get('email');
         const password = form.get('password');
         console.log(email, password);
+
+        setRegisterError('');
+        setSuccess('');
+
+
         signIn(email, password)
             .then(result => {
                 console.log(result.user)
+                setSuccess('User Created Successfully.');
             })
             .catch(error => {
                 console.error(error);
+                setRegisterError(error.message);
             })
     }
     return (
@@ -48,6 +57,12 @@ const Login = () => {
                     <button className="btn btn-primary">Login</button>
                 </div>
             </form>
+            {
+                registerError && <p className="text-red-700 text-bold text-center">{registerError}</p>
+            }
+            {
+                success && <p className="text-green-600 text-bold text-center">{success}</p>
+            }
             <p className="text-center mt-4">Do not have an account? <Link className="text-blue-600 font-bold" to="/register">Register</Link></p>
             <Footer></Footer>
         </div>
