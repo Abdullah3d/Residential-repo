@@ -7,7 +7,7 @@ import { Helmet } from "react-helmet-async";
 const Login = () => {
     const [registerError, setRegisterError] = useState('');
     const [success, setSuccess] = useState('');
-    const { signIn } = useContext(AuthContext);
+    const { signIn, signInWithGoogle, signInWithGithub } = useContext(AuthContext);
 
     const handleLogin = e => {
         e.preventDefault();
@@ -30,6 +30,26 @@ const Login = () => {
                 console.error(error);
                 setRegisterError(error.message);
             })
+    }
+
+    const handleGoogleSignIn = () => {
+        signInWithGoogle()
+            .then(result => {
+                console.log(result.user)
+            })
+            .catch(error => {
+                console.error(error);
+            })
+    }
+
+    const handleGithubSignIn = () =>{
+        signInWithGithub()
+        .then(result =>{
+            console.log(result.user)
+        })
+        .catch(error =>{
+            console.error(error)
+        })
     }
     return (
         <div>
@@ -64,6 +84,8 @@ const Login = () => {
                 success && <p className="text-green-600 text-bold text-center">{success}</p>
             }
             <p className="text-center mt-4">Do not have an account? <Link className="text-blue-600 font-bold" to="/register">Register</Link></p>
+            <p className="text-center text-green-500"><button onClick={handleGoogleSignIn} className="btn btn-ghost">Google</button></p>
+            <p className="text-center text-green-500"><button onClick={handleGithubSignIn} className="btn btn-ghost">Github Login</button></p>
             <Footer></Footer>
         </div>
     );

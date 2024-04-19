@@ -187,7 +187,8 @@ const Navbar = () => {
                         <button className="btn text-2xl font-semibold">Login</button>
                     </Link>
                 )}
-                {user && (
+                {user && 
+                (
                     <button onClick={handleSignOut} className="btn text-2xl font-semibold">Sign Out</button>
                 )}
             </div>
