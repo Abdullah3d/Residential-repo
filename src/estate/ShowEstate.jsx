@@ -1,11 +1,12 @@
+import { Link, useLoaderData } from "react-router-dom";
 
 const ShowEstate = ({ estates }) => {
-    const {estate_title,estate_img,segment_name,price,area,location} = estates;
+    const {id, estate_title, estate_img, segment_name, price, area, location } = estates;
 
     return (
         <div className="card bg-base-100 shadow-xl">
             <figure>
-                <img className="max-h-64" src={estate_img}alt="Shoes" /></figure>
+                <img className="max-h-64" src={estate_img} alt="Shoes" /></figure>
             <div className="card-body">
                 <h2 className="card-title text-3xl">{segment_name}</h2>
                 <p className="text-3xl font-bold">{estate_title}</p>
@@ -15,7 +16,9 @@ const ShowEstate = ({ estates }) => {
                     <h2>{location}</h2>
                 </div>
                 <div className="card-actions justify-center mt-10">
-                    <button className="btn btn-accent">View Property</button>
+                    <Link to={`/view/${id}`}><button className="btn btn-accent">View Property</button>
+                    </Link>
+
                 </div>
             </div>
         </div>

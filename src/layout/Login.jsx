@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import Footer from "../pages/Footer";
 import { useContext } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
+import { Helmet } from "react-helmet-async";
 
 const Login = () => {
     const { signIn } = useContext(AuthContext);
@@ -23,6 +24,9 @@ const Login = () => {
     }
     return (
         <div>
+            <Helmet>
+                <title>Task-9 | Login </title>
+            </Helmet>
             <h2 className="text-3xl my-10 text-center">Please Login</h2>
             <form onSubmit={handleLogin} className="md:w-3/4 lg:w-1/2 mx-auto">
                 <div className="form-control">

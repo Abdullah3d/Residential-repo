@@ -5,6 +5,7 @@ import ErrorPage from "../layout/ErrorPage";
 import Contact from "../pages/Contact";
 import Login from "../layout/Login";
 import Register from "../layout/Register";
+import ViewProperty from "../pages/ViewProperty";
 
 const router = createBrowserRouter([
     {
@@ -14,7 +15,7 @@ const router = createBrowserRouter([
         children: [
             {
                 path: '/',
-                element: <Home></Home>
+                element: <Home></Home>,
             },
             {
                 path:'/contact',
@@ -27,6 +28,11 @@ const router = createBrowserRouter([
             {
                 path: '/register',
                 element: <Register></Register>
+            },
+            {
+                path:'/view/:id',
+                element:<ViewProperty></ViewProperty>,
+                loader: () => fetch ('estates.json')
             }
         ]
     }
