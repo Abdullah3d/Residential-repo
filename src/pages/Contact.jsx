@@ -6,7 +6,7 @@ const Contact = () => {
         <div>
             <div className="text-center text-4xl py-40 font-bold">
                 <Helmet>
-                    <title>Task-9 | contact</title>
+                    <title>Residential | contact</title>
                 </Helmet>
                 <h2>Contact with us</h2>
                 <h3>We are one call away from you </h3>

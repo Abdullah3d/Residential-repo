@@ -53,7 +53,7 @@ const ViewProperty = () => {
     return (
         <div>
             <Helmet>
-                <title>Task-9 | ViewProperty </title>
+                <title>Residential | ViewProperty </title>
             </Helmet>
             <h2 className="text-center text-4xl font-bold p-5">View Property of: {id}</h2>
             <div className="grid gap-4 md:grid-cols-3 p-10">

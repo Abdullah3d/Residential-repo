@@ -1,6 +1,8 @@
+
+
 import { Link } from "react-router-dom";
 import Footer from "../pages/Footer";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 import { Helmet } from "react-helmet-async";
 
@@ -8,9 +10,11 @@ const Login = () => {
     const [registerError, setRegisterError] = useState('');
     const [success, setSuccess] = useState('');
     const { signIn, signInWithGoogle, signInWithGithub } = useContext(AuthContext);
+    const [isLoading, setIsLoading] = useState(false);
 
     const handleLogin = e => {
         e.preventDefault();
+        setIsLoading(true);
         console.log(e.currentTarget);
         const form = new FormData(e.currentTarget);
         const email = form.get('email');
@@ -25,36 +29,49 @@ const Login = () => {
             .then(result => {
                 console.log(result.user)
                 setSuccess('User Created Successfully.');
+                setIsLoading(false);
             })
             .catch(error => {
                 console.error(error);
                 setRegisterError(error.message);
+                setIsLoading(false);
             })
     }
 
     const handleGoogleSignIn = () => {
+        setIsLoading(true);
         signInWithGoogle()
             .then(result => {
                 console.log(result.user)
+                setIsLoading(false);
             })
             .catch(error => {
                 console.error(error);
+                setIsLoading(false);
             })
     }
 
-    const handleGithubSignIn = () =>{
+    const handleGithubSignIn = () => {
+        setIsLoading(true);
         signInWithGithub()
-        .then(result =>{
-            console.log(result.user)
-        })
-        .catch(error =>{
-            console.error(error)
-        })
+            .then(result => {
+                console.log(result.user)
+                setIsLoading(false);
+            })
+            .catch(error => {
+                console.error(error)
+                setIsLoading(false);
+            })
     }
+
+    useEffect(() => {
+        setIsLoading(false); 
+    }, []);
     return (
         <div>
+            {isLoading && <span className="loading loading-spinner loading-lg"></span>}
             <Helmet>
-                <title>Task-9 | Login </title>
+                <title>Residential | Login </title>
             </Helmet>
             <h2 className="text-3xl my-10 text-center">Please Login</h2>
             <form onSubmit={handleLogin} className="md:w-3/4 lg:w-1/2 mx-auto">
@@ -76,6 +93,7 @@ const Login = () => {
                 <div className="form-control mt-6">
                     <button className="btn btn-primary">Login</button>
                 </div>
+                
             </form>
             {
                 registerError && <p className="text-red-700 text-bold text-center">{registerError}</p>

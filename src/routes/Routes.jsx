@@ -34,11 +34,11 @@ const router = createBrowserRouter([
             {
                 path:'/view/:id',
                 element:<PrivetRoute><ViewProperty></ViewProperty></PrivetRoute>,
-                loader: () => fetch ('estates.json')
+                loader: () => fetch ('/estates.json')
             },
             {
                 path:'/updateProfile',
-                element:<Profile></Profile>
+                element:<PrivetRoute><Profile></Profile></PrivetRoute>
             }
         ]
     }

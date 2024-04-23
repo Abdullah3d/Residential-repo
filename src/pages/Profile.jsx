@@ -2,10 +2,8 @@ import { useContext } from "react";
 import { Helmet } from "react-helmet-async";
 import { AuthContext } from "../Provider/AuthProvider";
 import Footer from "./Footer";
-import { useNavigate } from "react-router-dom";
 
 const Profile = () => {
-    const navigate = useNavigate();
     const { user, createUser, updateUserProfile } = useContext(AuthContext);
     const handleUpdate = e => {
         e.preventDefault();
@@ -17,13 +15,9 @@ const Profile = () => {
         createUser(name, photo)
             .then(result => {
                 console.log(result.user)
-                updateUserProfile(name, photo)
-                    .then(() => {
-                        navigate(form);
+                updateUserProfile(name, photo)                        
                     })
 
-
-            })
             .catch(error => {
                 console.error(error)
             })
@@ -32,7 +26,7 @@ const Profile = () => {
     return (
         <div>
             <Helmet>
-                <title>Task-9 | profile </title>
+                <title>Residential | profile </title>
             </Helmet>
             <form onSubmit={handleUpdate} className=" mb-10md:w-3/4 lg:w-1/2 mx-auto">
                 <div className="form-control">

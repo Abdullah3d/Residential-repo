@@ -50,7 +50,7 @@ const Register = () => {
     return (
         <div>
             <Helmet>
-                <title>Task-9 |Register </title>
+                <title>Residential | Register </title>
             </Helmet>
             <h2 className="text-3xl my-10 text-center">Please Register</h2>
             <form onSubmit={handleRegister} className="md:w-3/4 lg:w-1/2 mx-auto">
