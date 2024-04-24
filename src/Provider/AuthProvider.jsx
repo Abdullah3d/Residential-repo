@@ -38,7 +38,7 @@ const AuthProvider = ({ children }) => {
         setLoading(true)
         return signInWithPopup(auth, githubProvider);
     }
-
+ 
     const logOut = () => {
         setLoading(true);
         return signOut(auth);

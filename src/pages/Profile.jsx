@@ -1,28 +1,32 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { AuthContext } from "../Provider/AuthProvider";
 import Footer from "./Footer";
+import { getAuth, updateProfile } from "firebase/auth";
 
 const Profile = () => {
     const { user, createUser, updateUserProfile } = useContext(AuthContext);
+    const [uName, setuName] = useState(user?.displayName)
+    const [uPhoto, setuPhoto] = useState(user?.photoURL)
+
+
     const handleUpdate = e => {
         e.preventDefault();
         const form = new FormData(e.currentTarget);
         const name = form.get('name');
-        const photo = form.get('photo');
-        console.log(name, photo);
+        const photo = form.get('Photo');
 
-        createUser(name, photo)
-            .then(result => {
-                console.log(result.user)
-                updateUserProfile(name, photo)                        
-                    })
-
-            .catch(error => {
-                console.error(error)
-            })
+        const auth = getAuth();
+        updateProfile(auth.currentUser, {
+            displayName: name, photoURL: photo
+        }).then(() => {
+            console.log("success")
+        }).catch((error) => {
+            console.log(error)
+        });
 
     }
+
     return (
         <div>
             <Helmet>
@@ -33,18 +37,23 @@ const Profile = () => {
                     <label className="label">
                         <span className="label-text">Name</span>
                     </label>
-                    {user?.name || <input type="text" name="name" placeholder="name" className="input input-bordered" required />}
+                    {user?.name || <input type="text" onChange={e => {
+                        const spouseName = e.target.value
+                        setuName(spouseName)
+                    }} value={uName} name="name" placeholder="name" className="input input-bordered" required />}
                 </div>
                 <div className="form-control">
                     <label className="label">
                         <span className="label-text">Photo URl</span>
                     </label>
                     {
-                        user?.photo || <input type="text" name="Photo" placeholder="Photo URL" className="input input-bordered" required />
+                        user?.photo || <input type="text" onChange={e => {
+                            setuPhoto(e.target.value)
+                        }} value={uPhoto} name="Photo" placeholder="Photo URL" className="input input-bordered" required />
                     }
                 </div>
                 <div className="form-control mt-6">
-                    <button className="btn btn-primary">Register</button>
+                    <button className="btn btn-primary">Save</button>
                 </div>
             </form>
             <Footer></Footer>

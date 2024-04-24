@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import ShowEstate from "./ShowEstate";
 import "animate.css"; 
 
+
 const Estate = () => {
     const [estates, setEstates] = useState([]);
     useEffect(()=>{
