@@ -1,7 +1,7 @@
-import React from "react";
 import { Helmet } from "react-helmet-async";
 import Footer from "./Footer";
 import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
+import 'animate.css';
 
 const Contact = () => {
     const position = [51.505, -0.09]; // Set the initial position
@@ -12,9 +12,9 @@ const Contact = () => {
                 <Helmet>
                     <title>Residential | contact</title>
                 </Helmet>
-                <h2>Contact with us</h2>
-                <h3>We are one call away from you</h3>
-                <h2 className="text-blue-300 mt-5 shadow-sm">Your Hotline : +974 66 55 777</h2>
+                <h2 className="animate__animated animate__bounce">Contact with us</h2>
+                <h3 className="animate__animated animate__bounce">We are one call away from you</h3>
+                <h2 className="text-blue-300 mt-5 shadow-sm animate__animated animate__bounce">Your Hotline : +974 66 55 777</h2>
                 <div className="map">
                     <MapContainer center={position} zoom={13} style={{ height: "400px", width: "100%" }}>
                         <TileLayer

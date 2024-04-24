@@ -1,4 +1,5 @@
 
+import 'animate.css';
 
 import { Link } from "react-router-dom";
 import Footer from "../pages/Footer";
@@ -73,7 +74,7 @@ const Login = () => {
             <Helmet>
                 <title>Residential | Login </title>
             </Helmet>
-            <h2 className="text-3xl my-10 text-center">Please Login</h2>
+            <h2 className="text-3xl my-10 text-center animate__animated animate__fadeIn">Please Login</h2>
             <form onSubmit={handleLogin} className="md:w-3/4 lg:w-1/2 mx-auto">
                 <div className="form-control">
                     <label className="label">

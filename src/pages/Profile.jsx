@@ -32,6 +32,7 @@ const Profile = () => {
             <Helmet>
                 <title>Residential | profile </title>
             </Helmet>
+            <h1 className="text-3xl mt-5 font-bold text-center animate__animated animate__bounce">Update Profile</h1>
             <form onSubmit={handleUpdate} className=" mb-10md:w-3/4 lg:w-1/2 mx-auto">
                 <div className="form-control">
                     <label className="label">

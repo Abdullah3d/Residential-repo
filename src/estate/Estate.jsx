@@ -1,7 +1,8 @@
 
 import { useEffect, useState } from "react";
 import ShowEstate from "./ShowEstate";
-import "animate.css"; 
+import 'animate.css';
+
 
 
 const Estate = () => {
@@ -14,9 +15,9 @@ const Estate = () => {
     return (
         <div className="animate__animated animate__fadeIn"> 
             <div className="text-5xl font-bold text-center mb-5">
-               <h2>All Estate Are here</h2>
+               <h2 className="animate__animated animate__bounce">All Estate Are here</h2>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-5 p-7">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-5 p-7 ">
                 {
                     estates.map(estate => (
                         <div key={estate.id} className="animate__animated animate__fadeIn">
